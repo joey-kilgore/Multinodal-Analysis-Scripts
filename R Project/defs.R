@@ -4,7 +4,7 @@
 # DATA_FOLDER is the folder containing multiple .csv files generated from the Nerve-Block-Modeling repository
 # https://github.com/joey-kilgore/Nerve-Block-Modeling
 # All folder paths should end in a \ or / depending on the OS
-DATA_FOLDER <- ""
+DATA_FOLDER <- "C:\\Users\\Joey\\Desktop\\TestData\\10kBlock\\110BT\\"
 
 getDataFolder <- function(){
   if(DATA_FOLDER == ""){

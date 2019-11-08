@@ -1,0 +1,36 @@
+---
+title: "Graph Overview"
+author: "Joseph Kilgore"
+date: "11/8/2019"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+## Source Files
+Multiple files are loaded for this markdown document. Each has its own use, and were built with modularity, and meant to be taken apart, and tinkered with.
+
+#### UsefulFunctions.R
+This is a conglomeration of functions that are useful while analyzing data from the [Nerve-Block-Modeling Repository](https://github.com/joey-kilgore/Nerve-Block-Modeling/). Notably there are functions for loading entire sets of .csv files, and putting them into one dataframe.
+
+#### 3DVoltage.R
+Generates 3D voltage plots as seen in various works that analyze multiple nodes.
+
+#### defs.R
+Keeps track of certain parameters (notably the dataset directory), which are used by multiple source files.
+
+```{r setup, results='hide', warning=FALSE}
+source("UsefulFunctions.R")
+source("3DVoltage.R")
+source("defs.R")
+```
+
+## 3D Voltage Plots  
+3D voltage plots allow showing voltage of multiple nodes over time. Unfortunately, 3d graphs are notorious for making some data hard to see.  
+Regardless, they are a useful tool, and the following graph is an example of how they can show block. The following article is a reference to one of the earlier examples of this graphing technique.  
+
+[Zhang, X., Roppolo, J., Groat, W. D., & Tai, C. (2005). Simulation Analysis of Nerve Block by High Frequency Biphasic Electrical Current Based on Frankenhaeuser-Huxley Model. 2005 IEEE Engineering in Medicine and Biology 27th Annual Conference. doi: 10.1109/iembs.2005.1615402](https://www.ncbi.nlm.nih.gov/pubmed/16200764)
+
+```{r voltage3d, results='hide'}
+voltagePlot3D()
+```
