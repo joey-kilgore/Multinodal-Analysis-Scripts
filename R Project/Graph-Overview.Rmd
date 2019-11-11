@@ -14,7 +14,10 @@ Multiple files are loaded for this markdown document. Each has its own use, and 
 This is a conglomeration of functions that are useful while analyzing data from the [Nerve-Block-Modeling Repository](https://github.com/joey-kilgore/Nerve-Block-Modeling/). Notably there are functions for loading entire sets of .csv files, and putting them into one dataframe.
 
 #### 3DVoltage.R
-Generates 3D voltage plots as seen in various works that analyze multiple nodes.
+Generates 3D voltage plots showing the voltage of multiple nodes over time.
+
+#### VoltageProfile.R
+Generate plot of all node voltage values at a given time.
 
 #### defs.R
 Keeps track of certain parameters (notably the dataset directory), which are used by multiple source files.
@@ -22,6 +25,7 @@ Keeps track of certain parameters (notably the dataset directory), which are use
 ```{r setup, results='hide', warning=FALSE}
 source("UsefulFunctions.R")
 source("3DVoltage.R")
+source("VoltageProfile.R")
 source("defs.R")
 ```
 
@@ -33,4 +37,13 @@ Regardless, they are a useful tool, and the following graph is an example of how
 
 ```{r voltage3d, results='hide'}
 voltagePlot3D()
+```
+
+## Voltage Profile Plots
+Voltage profile plots give a method for observing the voltage of all nodes in a simulation. This is essentially a slice of the 3D voltage plot shown above, but showing all nodes instead of just a few. The following article is a reference to one of the earlier examples of this graphing technique.
+
+[Bhadra, N., & Kilgore, K. (2004). Direct Current Electrical Conduction Block of Peripheral Nerve. IEEE Transactions on Neural Systems and Rehabilitation Engineering, 12(3), 313–324. doi: 10.1109/tnsre.2004.834205](https://www.ncbi.nlm.nih.gov/pubmed/15473193)
+
+```{r voltageProfile, results='hide'}
+voltageProfile()
 ```
