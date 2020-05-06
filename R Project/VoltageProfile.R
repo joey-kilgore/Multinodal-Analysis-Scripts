@@ -17,13 +17,13 @@ source("UsefulFunctions.R")
 # load any constants defined for this particular run (especially where the data set is located)
 source("defs.R")
 
-voltageProfile <- function(t=10000){
+voltageProfile <- function(t=10000,  DATA=getDataAllDF(getDataFolder())){
   # voltageProfile generates a plot showing the voltage of all 101 nodes in the current model 
   #   used in the Nerve-Block-Modeling Repository
   # https://github.com/joey-kilgore/Nerve-Block-Modeling
   # t is the row of the csv files that will be shown
   
-  DATA <- getDataAllDF(getDataFolder()) # load the data
+  #DATA <- getDataAllDF(getDataFolder()) # load the data
   
   x <- seq(1,101,by=1)  # create vector of node indices
   vData <- as.vector(unlist(DATA[t,x+203])) # vector of voltage data

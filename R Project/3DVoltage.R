@@ -18,12 +18,12 @@ source("UsefulFunctions.R")
 # load any constants defined for this particular run (especially where the data set is located)
 source("defs.R")
 
-voltagePlot3D <- function(t1=7900, t2=8500){
+voltagePlot3D <- function(t1=7900, t2=8500, DATA = getDataAllDF(getDataFolder())){
   # voltagePlot3D returns a 3d voltage plot showing the voltage of multiple nodes over time
   # The bounds t1 and t2 are the rows of the .csv files that show an example block at 40ms
   # with time step of .005ms (both of which are relatively standard with the Nerve-Blcok-Modeling Repo)
   
-  DATA <- getDataAllDF(getDataFolder()) # load data
+  #DATA <- getDataAllDF(getDataFolder()) # load data
   
   t <- DATA$Time[t1:t2] # create time vector
   
@@ -58,7 +58,7 @@ voltagePlot3D <- function(t1=7900, t2=8500){
   
   plot <- scatter3D(X,TIME,V,
                     xlab="Node", ylab="Time (ms)", zlab="Voltage (mV)", box=FALSE,
-                    phi=30, theta=35, zlim=c(-65,350))
+                    phi=30, theta=75, zlim=c(-65,350))
   # phi, theta, and zlim were all chosen to closer represent the figures shown in the paper referenced above
   return(plot) 
 }
